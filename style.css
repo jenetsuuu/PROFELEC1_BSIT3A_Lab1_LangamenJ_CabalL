@@ -1,0 +1,600 @@
+/* universal */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body section */
+body{
+    min-height: 100vh;
+    background-image: url(images/totoro.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* home section */
+#home{
+    height: 100vh;
+    width: 100%;
+}
+
+/* navigation bar */
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.3rem 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+header::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0);
+    z-index: -1;
+}
+
+.logo{
+    font-size: 50px;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-family: 'Jersey 10';
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.logo:hover{
+    color: seagreen;
+    transition: 0.3s;
+}
+
+.navbar a{
+    font-size: 1.15rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 2.5rem;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.navbar a:hover{
+    text-shadow: 3px 3px 20px white, -2px 1px 30px #fff;
+}
+
+#check{
+    display: none;
+}
+
+.icons{
+    position: absolute;
+    right: 5%;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+/* breakpoints */
+@media(max-width: 992px){
+    header{
+        padding: 1.3rem 5%;
+    }
+}
+
+@media(max-width: 991px){
+    .icons{
+        display: inline-flex;
+    }
+
+    #check:checked~.icons #menu-icon{
+        display: none;
+    }
+
+    .icons #close-icon{
+        display: none;
+    }
+
+    #check:checked~.icons #close-icon{
+        display: block;
+    }
+
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: rgba(0,0,0,0.1);
+        box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+        overflow: hidden;
+        transition: 0.3s ease;
+    }
+
+    #check:checked~.navbar{
+        height: 17.7rem;
+    }
+
+    .navbar a{
+        display: block;
+        font-size: 1.1rem;
+        margin: 1.5rem 0;
+        text-align: center;
+        transform: translateY(-50px);
+        transition: 0.3s ease;
+    }
+
+    #check:checked~.navbar a{
+        transform: translateY(0);
+    }
+}
+
+/* welcome text */
+.headings{
+    padding: 10%;
+    margin: 5%;
+    color: white;
+    padding-top: 20%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+}
+
+.w{
+    color: white;
+    font-family: Verdana, sans-serif;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.w:hover{
+    color: seagreen;
+    transform: scale(1.1);
+}
+
+@media(max-width: 991px){
+    .headings{
+        font-size: 20px;
+        padding-top: 50%;
+    }
+}
+
+/* about section */
+.as{
+    padding-top: 5%;
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    font-family: Arial, sans-serif;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5;
+}
+
+.as:hover{
+    color: seagreen;
+    transition: 0.3s;
+}
+
+@media(max-width: 991px){
+    .as{
+        font-size: 30px;
+    }
+}
+
+#about{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 100px;
+}
+
+.card{
+    width: 308px;
+    position: relative;
+    height: 500px;
+    background-color: seagreen;
+    margin: 20px 50px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+    transition: 0.3s ease-in-out;
+    margin-top: 5%;
+}
+
+.card img{
+    width: 100%;
+    height: auto;
+    padding: 10%;
+}
+
+.content{
+    padding-bottom: 8%;
+}
+
+.content h3{
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.content p{
+    font-size: 15px;
+    font-family: Poppins, sans-serif;
+    color: whitesmoke;
+}
+
+/* projects */
+#project{
+    display: flex;
+    justify-content: center;
+}
+
+.nim{
+    padding-top: 5%;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5;
+}
+
+.nim:hover{
+    color: seagreen;
+    transition: 0.3s;
+}
+
+.container2{
+    position: relative;
+    width: 1110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px;
+    margin-top: 8%;
+}
+
+.container2 .card2{
+    width: 308px;
+    position: relative;
+    height: 400px;
+    background-color: seagreen;
+    margin: 30px 10px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+    transition: 0.3s ease-in-out;
+    margin-top: 5%;
+}
+
+.container2 .card2 .img2{
+    position: relative;
+    width: 260px;
+    height: 260px;
+    top: -60px;
+    left: 20px;
+    box-shadow: 0.5px 20px rgba(0,0,0,0.2);
+}
+
+.container2 .card2 .img2 img{
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.img2:hover img{
+    transform: scale(1.1);
+}
+
+.container2 .card2 .img2 h2{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.container2 .card2 .img2 p{
+    font-size: 13px;
+    font-family: 'Poppins', sans-serif;
+    color: whitesmoke;
+}
+
+/* contact section */
+#contact{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+/* para macenter */
+.container3{
+    position: relative;
+    min-height: 100vh;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* para matupong ag contact info ug form */
+.container4{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* para sa contact info */
+.container4 .coninfo{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container4 .coninfo .box1{
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+}
+
+.container4 .coninfo .box1 .icon{
+    min-width: 60px;
+    height: 60px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 22px;
+    color: seagreen;
+}
+
+.container4 .coninfo .box1 .text{
+    display: flex;
+    margin-left: 20px;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+/* para sa form */
+.conform{
+    width: 40%;
+    padding: 40px;
+    background-color: seagreen;
+    border-radius: 30px;
+}
+
+.conform h2{
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.conform .inputbox{
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.conform .inputbox input,
+.conform .inputbox textarea{
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 2px solid #333;
+    outline: none;
+    resize: none;
+    background-color: rgba(0,0,0,0);
+    color: white;
+}
+
+.conform .inputbox span{
+    position: absolute;
+    left: 0;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color: whitesmoke;
+}
+
+.conform .inputbox input:focus ~ span,
+.conform .inputbox textarea:focus ~ span{
+    color: whitesmoke;
+    font-size: 12px;
+    transform: translateY(-20px);
+}
+
+.conform .inputbox input[type="submit"]{
+    width: 100px;
+    background-color: green;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 200px;
+    border-radius: 5%;
+}
+
+/* this is for the footer */
+footer{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: rgba(49, 124, 14, 0.2);
+}
+
+.footer{
+    width: 100%;
+    padding: 70px 30px 20px;
+}
+
+.socicon{
+    display: flex;
+    justify-content: center;
+}
+
+.socicon a{
+    text-decoration: none;
+    padding: 10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 50%;
+}
+
+.socicon a i{
+    font-size: 2em;
+    color: seagreen;
+    opacity: 0.9;
+}
+
+.socicon a:hover{
+    background-color: rgba(49, 124, 14, 0);
+    transition: 0.5s;
+}
+
+.socicon a i:hover{
+    color: white;
+    transition: 0.5s;
+}
+
+.footnav{
+    margin: 30px 0;
+}
+
+.footnav ul{
+    display: flex;
+    justify-content: center;
+}
+
+.footnav ul li{
+    list-style-type: none;
+}
+
+.footnav ul li a{
+    color: white;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 1.3em;
+    opacity: 0.7;
+    transition: 0.5s;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footnav ul li a:hover{
+    opacity: 1;
+}
+
+.footbottom{
+    background-color: seagreen;
+    padding: 20px;
+    text-align: center;
+}
+
+.footbottom p{
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+@media(max-width: 991px){
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    nav{
+        position: absolute;
+    }
+    .header{
+        padding: 10%;
+        padding-top: 40%;
+    }
+    #contact{
+        padding: 50px;
+    }
+    .container3{
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+    }
+    .container4{
+        flex-direction: column;
+    }
+    
+    .container4 .coninfo{
+        margin-bottom: 40px;
+    }
+    .container4 .coninfo, .conform{
+        width: 100%;
+    }
+    .container4 .coninfo .box1 .text{
+        font-size: 12px;
+    }
+    .conform h2{
+        font-size: 20px;
+        font-weight: 500;
+    }
+    .conform .inputbox span{
+        position: absolute;
+        left: 0;
+        padding: 5px 0;
+        font-size: 16px;
+        margin: 10px 0;
+        pointer-events: none;
+        transition: 0.5s;
+        color: whitesmoke;
+        font-size: 10px;
+    }
+    
+    .conform .inputbox input:focus ~ span,
+    .conform .inputbox textarea:focus ~ span{
+        color: whitesmoke;
+        font-size: 8px;
+        transform: translateY(-20px);
+    }
+    footer{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        background-color: rgba(49, 124, 14, 0.2);
+    }
+    
+    .footer{
+        width: 100%;
+        padding: 70px 30px 20px;
+    }    
+    .footnav ul{
+        width: 100%;
+        text-align: center;
+        margin: 10px;
+    }
+    .footnav ul li a{
+        font-size: 16px;
+    }
+    .footbottom p{
+        font-size: 13px;
+    }
+}
